@@ -1,0 +1,48 @@
+todo-app/
+│
+├── cmd/
+│   ├── api/             # main.go — запускает HTTP сервер
+│   └── bot/             # main.go — Telegram-бот
+│
+├── internal/
+│   ├── config/          # Загрузка конфигурации (env, defaults)
+│   ├── logger/          # Инициализация логгера (zap / slog)
+│   ├── middleware/      # JWT, логгинг, recovery и пр.
+│   ├── pprof/           # pprof endpoints
+│
+├── pkg/                 # Переиспользуемые пакеты
+│   └── jwt/             # JWT генерация и парсинг
+│   └── hashing/         # bcrypt-утилиты
+│
+├── api/                 # Delivery слой (transport)
+│   ├── http/
+│   │   ├── handlers/    # auth, user, tasks
+│   │   ├── middleware/
+│   │   └── router.go    # Роутер (Gin, Fiber, Echo)
+│
+├── bot/                 # Telegram бот (delivery + usecase)
+│   └── handler.go
+│
+├── domain/              # Enterprise бизнес-правила (Entity + Interface)
+│   ├── model/           # Сущности (User, Task, TwoFACode)
+│   └── service/         # Интерфейсы UseCase
+│
+├── usecase/             # Бизнес-логика
+│   ├── auth/            # Регистрация, логин, JWT
+│   ├── task/            # CRUD задач
+│   ├── user/            # Получение и валидация пользователей
+│   └── twofa/           # Отправка и проверка кода
+│
+├── repository/          # Реализация интерфейсов работы с БД
+│   ├── postgres/
+│   │   ├── user_repo.go
+│   │   ├── task_repo.go
+│   │   └── twofa_repo.go
+│
+├── migrations/          # SQL-файлы для миграций
+│
+├── Dockerfile
+├── Dockerfile.bot
+├── docker-compose.yml
+├── go.mod
+└── README.md

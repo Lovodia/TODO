@@ -1,6 +1,6 @@
-.idea
-.txt
-.jpeg
-.png
-.gif
-.bmp
+.idea/         # игнорировать папку .idea
+*.txt          # все .txt файлы
+*.jpeg         # все .jpeg файлы
+*.png          # все .png файлы
+*.gif          # все .gif файлы
+*.bmp          # все .bmp файлы
