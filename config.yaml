@@ -1,0 +1,21 @@
+port: "8080"
+log_level: "debug"
+migrations: "./migrations"
+
+dbhost: "localhost"
+dbport: 5432
+dbuser: "todo_user"
+dbpassword: "supersecret"
+dbname: "todo_db"
+sslmode: "disable"
+
+jwt:
+  jwt_secret: "verysecretjwt"
+  jwt_expiration: "1h"
+
+telegram:
+  telegram_bot_token: "123456"
+
+twofa:
+  twofa_code_ttl: "2m"
+  twofa_code_len: 6

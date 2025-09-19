@@ -1,0 +1,26 @@
+package config
+
+import "errors"
+
+var (
+	ErrDBHostRequired     = errors.New("DBHost is required")
+	ErrDBPortInvalid      = errors.New("DBPort must be between 1 and 65535")
+	ErrDBUserRequired     = errors.New("DBUser is required")
+	ErrDBPasswordRequired = errors.New("DBPassword is required")
+	ErrDBNameRequired     = errors.New("DBName is required")
+	ErrInvalidSSLMode     = errors.New("invalid SSLMode")
+
+	ErrServerPortRequired     = errors.New("Server.Port is required")
+	ErrServerPortMustBeNumber = errors.New("Server.Port must be a number")
+
+	ErrInvalidLogLevel        = errors.New("invalid LogLevel")
+	ErrMigrationsPathRequired = errors.New("migrations_path is required")
+
+	ErrJWTSecretTooShort     = errors.New("JWTSecret is too short (min 8 chars)")
+	ErrJWTExpirationTooShort = errors.New("JWT expiration must be >= 1m")
+
+	ErrTelegramBotTokenRequired = errors.New("telegram Bot Token is required")
+
+	ErrTwoFACodeTTLTooShort = errors.New("2FA code TTL must be >= 30s")
+	ErrTwoFACodeLenTooShort = errors.New("2FA code length must be >= 4")
+)
